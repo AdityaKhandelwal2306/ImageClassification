@@ -1,40 +1,48 @@
-# **Cat vs Dog Image Classification API**  
+# **Cat vs Dog Image Classification API**
 
-This project provides an **API for classifying images of cats and dogs** using a trained deep-learning model.
-
----
-
-## **Setup**
-
-### **1. Clone Repository**  
-```bash
-git clone <repository-url>
-cd <project-directory>
-```
-
-### **2. Create and Activate Virtual Environment**  
-```bash
-python -m venv venv
-source venv/bin/activate  # On macOS/Linux
-venv\Scripts\activate     # On Windows
-```
-
-### **3. Install Dependencies**  
-```bash
-pip install -r requirements.txt
-```
-
-### **4. Run the API**  
-```bash
-uvicorn app.main:app --reload
-```
-
-### **5. Access the API**  
-* Open your browser at: `http://127.0.0.1:8000`  
-* API Endpoint: `POST /predict`  
-* Example Request: Upload an image file to `/predict` to receive a prediction.
+This project offers an **API for classifying images of cats and dogs** using a pretrained deep learning model.
 
 ---
+
+## **Getting Started**
+
+### *Prerequisites*
+
+Ensure you have the following installed:
+- Python 3.7 or later
+- Required Python libraries (listed in `requirements.txt`)
+
+### **Installation**
+
+  ### **1. Clone the Repository**
+  ```bash
+  git clone https://github.com/AdityaKhandelwal2306/ImageClassification.git
+  cd ImageClassification
+  ```
+  
+  ### **2. Create and Activate a Virtual Environment**
+  ```bash
+  python -m venv venv
+  source venv/bin/activate  # For macOS/Linux
+  venv\Scripts\activate   # For Windows
+  ```
+  
+  ### **3. Install Required Dependencies**
+  ```bash
+  pip install -r requirements.txt
+  ```
+  
+  ### **4. Launch the API**
+  ```bash
+  uvicorn app.main:app --reload
+  ```
+  
+  ### **5. Access the API**
+  * Open your browser at: `http://<localhostOrIP>:<port>`  
+  * API Endpoint: `POST /predict`  
+  * Example Request: Upload an image file to `/predict` to get a prediction.
+  
+  ---
 
 ## **Project Structure**
 
@@ -42,29 +50,29 @@ uvicorn app.main:app --reload
 project-root/
 │
 ├── api/
-│   ├── routes.py       # API route definitions
-│   ├── schemas.py      # API response models
+│   ├── routes.py       # Defines API routes
+│   ├── schemas.py      # Defines API response schemas
 │
 ├── app/
-│   ├── main.py         # Entry point for FastAPI application
+│   ├── main.py         # FastAPI application entry point
 │
 ├── core/
 │   ├── config.py       # Configuration settings
-│   ├── prediction.py   # Image preprocessing and prediction logic
-│   ├── training.py     # Model training script
+│   ├── prediction.py   # Logic for image preprocessing and prediction
+│   ├── training.py     # Script for training the model
 │
-├── data/              # Dataset directory
+├── data/               # Directory for datasets
 │   ├── cat/
 │   ├── dog/
 │
 ├── models/
-│   ├── cat_dog_model.h5 # Trained Keras model
+│   ├── cat_dog_model.h5 # Pretrained Keras model
 │
-├── uploads/           # Stores uploaded test images
+├── uploads/            # Stores uploaded test images
 │
-├── requirements.txt   # Project dependencies
-├── README.md          # Documentation
-└── venv/              # Virtual environment
+├── requirements.txt    # Dependencies for the project
+├── README.md           # Documentation
+└── venv/               # Virtual environment
 ```
 
 ---
@@ -76,7 +84,7 @@ project-root/
 * **Classes:** Cat, Dog  
 * **Training Script:** `core/training.py`  
 
-### **Run Training Script**  
+### **Run the Training Script**
 ```bash
 python core/training.py
 ```
@@ -85,7 +93,7 @@ python core/training.py
 
 ## **API Example**
 
-### **Request Example (Using cURL)**  
+### **Request Example (Using cURL)**
 ```bash
 curl -X POST "http://127.0.0.1:8000/predict" \
 -H "accept: application/json" \
@@ -93,7 +101,7 @@ curl -X POST "http://127.0.0.1:8000/predict" \
 -F "file=@path_to_image.jpg"
 ```
 
-### **Response Example**  
+### **Response Example**
 ```json
 {
   "file": "cat_2.jpg",
@@ -113,15 +121,15 @@ curl -X POST "http://127.0.0.1:8000/predict" \
   ```bash
   git checkout -b feature-branch
   ```
-* Make your changes and commit:  
+* Implement your changes and commit:  
   ```bash
   git commit -m "Your changes"
   ```
-* Push to the branch:  
+* Push the changes to your branch:  
   ```bash
   git push origin feature-branch
   ```
-* Create a pull request.
+* Submit a pull request.
 
 ---
 
@@ -130,4 +138,3 @@ curl -X POST "http://127.0.0.1:8000/predict" \
 This project is licensed under the **MIT License**.
 
 ---
-
